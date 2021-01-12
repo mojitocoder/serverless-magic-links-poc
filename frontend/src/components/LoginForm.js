@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const loginUrl = 'https://h7swmj8oc1.execute-api.eu-west-1.amazonaws.com/dev/login'; // TODO: should be an env var
+const loginUrl = 'https://qgaki3t1cf.execute-api.eu-west-1.amazonaws.com/quynh/login'; // TODO: should be an env var
 
 export default () => {
     const [loading, setLoading] = useState(false);

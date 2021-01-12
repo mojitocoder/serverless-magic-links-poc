@@ -6,7 +6,7 @@ import FinishSignIn from "./routes/FinishSignIn";
 
 
 export default () => (
-    <BrowserRouter basename="/dev">
+    <BrowserRouter basename="/quynh">
         <Switch>
             <Route path="/sign-in/:challenge" component={FinishSignIn}/>
             <Route path="/" component={Main}/>
