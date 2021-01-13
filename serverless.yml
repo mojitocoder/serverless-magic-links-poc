@@ -13,6 +13,14 @@ functions:
           method: post
           cors: true
 
+  pre-signup:
+    handler: api/pre-signup.handler
+    events:
+      - cognitoUserPool:
+          pool: ${self:custom.userPoolName}
+          trigger: PreSignUp
+          existing: true
+
   # 1. Define auth challenge (letting Cognito know that we have a custom challenge)
   define-auth-challenge:
     handler: api/define-auth-challenge.handler
