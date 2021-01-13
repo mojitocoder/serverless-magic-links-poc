@@ -12,10 +12,15 @@ export default () => {
         }
     };
 
-    const signOut = async() => {
+    const signOut = async () => {
         await Auth.signOut();
         typeof window !== 'undefined' && window.location.reload();
     };
+
+    const resetPassword = async () => {
+        await Auth.forgotPassword(session.idToken.payload.email)
+        alert('Reset password email should be sent out shortly');
+    }
 
     useEffect(() => {
         getSession();
@@ -30,6 +35,9 @@ export default () => {
 
             <p>Session object:</p>
             <pre>{JSON.stringify(session, null, 2)}</pre>
+
+            <p>Forget your password?</p>
+            <button onClick={resetPassword}>Reset password</button>
         </>
     );
 }
